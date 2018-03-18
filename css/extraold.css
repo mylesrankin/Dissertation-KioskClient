@@ -1,0 +1,41 @@
+.container-fixed {
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.container-fixed .col {
+    height: 100%;
+    overflow: auto;
+}
+
+.row{
+    height: 33.33%;
+}
+
+.col {
+    background: repeating-linear-gradient(
+            242deg,
+            #606dbc,
+            #606dbc 10px,
+            #465298 10px,
+            #465298 20px
+    );
+}
+
+.btn:hover {
+    background-color: darkgrey;
+}
+
+.imgcontainer {
+    padding: auto;
+    align-content: center;
+}
+
+.imgsection img {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+}

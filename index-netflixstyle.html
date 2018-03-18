@@ -1,0 +1,442 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html><html class=''>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/RRoberts/pen/zBpNoK?depth=everything&order=popularity&page=63&q=Overlay&show_forks=false" />
+
+
+    <style class="cp-pen-styles">body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6, p{
+        color: #fff;
+        font-weight: 200;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    /* GRID */
+    body {
+        justify-content: center;
+        display: flex;
+        width: 
+    }
+    .grid {
+        margin: 1%;
+    }
+
+    .four {
+        width: 18.5%;
+    }
+
+    /* COLUMNS */
+
+    .col {
+        display: block;
+        float:left;
+        margin: 1% 0 1% 1.6%;
+    }
+
+    .col:first-of-type { margin-left: 0; }
+
+    /* CLEARFIX */
+
+    .cf:before,
+    .cf:after {
+        content: " ";
+        display: table;
+    }
+
+    .cf:after { clear: both; }
+    .cf { *zoom: 1; }
+
+    /* GENERAL STYLES FOR BOX AND OVERLAY */
+
+    .box {
+        display: block;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        background-color: #bbb;
+        text-align: center;
+        position: relative;
+    }
+
+    .overlay{
+        width: 100%;
+        height:100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    /* SLIDE IN */
+
+    .slide-in .overlay{
+        background-color: #6addaa;
+        line-height: 200px;
+        color: #fff;
+        transform: translateX(-100%);
+        -webkit-transition: transform 0.5s ease-out;
+        -o-transition: transform 0.5s ease-out;
+        transition: transform 0.5s ease-out;
+    }
+
+    .slide-in .box:hover .overlay{
+        transform: translateX(0);
+    }
+
+    /* SLIDE UP */
+
+    .slide-up .overlay{
+        background-color: #3dcbe8;
+        line-height: 200px;
+        color: #fff;
+        transform: translateY(100%);
+        -webkit-transition: transform 0.5s ease-out;
+        -o-transition: transform 0.5s ease-out;
+        transition: transform 0.5s ease-out;
+    }
+
+    .slide-up .box:hover .overlay{
+        transform: translateY(0);
+    }
+
+    /* SLIDE DOWN DELAY */
+
+    .slide-down-delay .overlay{
+        background-color: #ee6f8c;
+        line-height: 200px;
+        color: #fff;
+        transform: translateY(-100%);
+        -webkit-transition: transform 0.5s ease-out;
+        -o-transition: transform 0.5s ease-out;
+        transition: transform 0.5s ease-out;
+    }
+
+    .slide-down-delay .box:hover .overlay{
+        transform: translateY(0);
+    }
+
+    .slide-down-delay .overlay i{
+        transform: translateY(-80%);
+        opacity: 0;
+        -webkit-transition: transform 0.5s linear, opacity 0.5s linear 0.5s;
+        -o-transition: transform 0.5s linear, opacity 0.5s linear 0.5s;
+        transition: transform 0.5s linear, opacity 0.5s linear 0.5s;
+    }
+
+    .slide-down-delay .box:hover .overlay i{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* ROTATE */
+
+    .rotate .overlay{
+        background-color: #6d94bb;
+        line-height: 200px;
+        color: #fff;
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+        -webkit-transition: transform 0.5s ease-in-out;
+        -o-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .rotate .box:hover .overlay{
+        transform: rotate(0deg);
+    }
+
+    /* SCALE */
+
+    .scale .overlay{
+        background-color: #efcb5e;
+        line-height: 200px;
+        color: #fff;
+        transform: translateX(210%) scale(3);
+        -webkit-transition: transform 0.6s ease-in-out;
+        -o-transition: transform 0.6s ease-in-out;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .scale .box:hover .overlay{
+        transform: translateX(0) scale(1);
+    }
+
+    /* FLIP */
+
+    .flip .overlay{
+        background-color: #009688;
+        line-height: 200px;
+        color: #fff;
+        opacity: 0;
+        transform: rotateY(180deg);
+        -webkit-transition: transform 0.6s ease-in-out 0.3s, opacity 0.3s ease-in-out;
+        -o-transition: transform 0.6s ease-in-out 0.3s, opacity 0.3s ease-in-out;
+        transition: transform 0.6s ease-in-out 0.3s, opacity 0.3s ease-in-out;
+    }
+
+    .flip .box:hover .overlay{
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+
+    /* SKEW */
+
+    .skew .overlay{
+        background-color: #f44336;
+        line-height: 200px;
+        color: #fff;
+        opacity: 0;
+        transform: skewX(-10deg);
+        -webkit-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .skew .box:hover .overlay{
+        transform: skewX(0deg);
+        opacity: 1;
+    }
+
+    /* CORNER */
+
+    .corner-bottom .overlay{
+        background-color: #9c27b0;
+        line-height: 200px;
+        color: #fff;
+        transform: translate(100%, 100%);
+        -webkit-transition: transform 0.4s ease-in-out;
+        -o-transition: transform 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .corner-bottom .box:hover .overlay{
+        transform: translate(0, 0);
+    }
+
+    /* CORNER */
+
+    .corner-top .overlay{
+        background-color: #ff5722;
+        line-height: 200px;
+        color: #fff;
+        transform: translate(-100%, -100%);
+        -webkit-transition: transform 0.4s ease-in-out;
+        -o-transition: transform 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .corner-top .box:hover .overlay{
+        transform: translate(0, 0);
+    }</style></head><body>
+<div class="grid">
+    <div class="row cf">
+        <div class="slide-in four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from left</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-commenting-o fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-up four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide up</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="row cf">
+        <div class="slide-in four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from left</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-commenting-o fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-up four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide up</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="row cf">
+        <div class="slide-in four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from left</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-commenting-o fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-up four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide up</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-down-delay four col">
+            <div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+                <div class="overlay">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<script src='https://use.fontawesome.com/f56e4513c5.js'></script>
+</body></html>

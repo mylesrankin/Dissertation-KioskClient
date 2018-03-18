@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="js/angular-app.js"></script>
+    <link rel="stylesheet" href="css/angular.css">
+</head>
+
+<!--
+  Your HTML content here
+-->
+
+
+
+
+<body>
+
+<div ng-cloak ng-app="MyApp">
+    <div layout="column" class="zero">
+
+        <div flex="33" flex-md="{{ vm.box1Width }}" class="one"></div>
+        <div flex="33" layout="{{ vm.direction }}" layout-md="row" class="two">
+
+            <div flex="20" flex-md="10" hide-lg class="two_one"></div>
+            <div flex="30px" show hide-md="{{ vm.hideBox }}" flex-md="25" class="two_two"></div>
+            <div flex="20" flex-md="65" class="two_three"></div>
+
+        </div>
+        <div flex class="three"></div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at https://material.angularjs.org/license.
+-->
