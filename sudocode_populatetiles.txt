@@ -1,0 +1,15 @@
+len n
+
+array [ d1...d16]
+
+c = 0
+for i in array
+	if c <= 4
+		append to row 1
+	elif c >4 & <= 10:
+		append row 2
+	elif c >10 
+		append row 3
+
+
+

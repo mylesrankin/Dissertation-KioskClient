@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kioskApp">
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/extra.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Include Angular and Angular Routes CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-app.js"></script>
+</head>
+<body ng-controller="kioskFrontScreen">
+<div class="container-fluid" >
+    <!-- 'header' -->
+    <div class="row" style="height: 8vh;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="text-align: center;"><h1>Prototype Interactive BrochureKiosk</h1></div>
+    </div>
+    <div id="row1" class="row justify-content-center" style="height: 28vh;"> <!-- 5 tiles -->
+        <div class="card-container" ng-repeat="tile in row1">
+            <a href="{{tile.title}}" class="card" id="#cardu" style="width: 20rem;">
+                <img class="card-img-top" src="images/286x180-holder.png" height="50%" alt="{{tile.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.title}}</h5>
+                    <p class="card-text">{{tile.content}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="row2" class="row justify-content-center" style="height: 28vh;"> <!-- 6 tiles -->
+        <div class="card-container" ng-repeat="tile in row2">
+            <a href="{{tile.title}}" class="card" id="#cardu" style="width: 20rem;">
+                <img class="card-img-top" src="images/286x180-holder.png" height="50%" alt="{{tile.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.title}}</h5>
+                    <p class="card-text">{{tile.content}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="row3" class="row justify-content-center" style="height: 28vh;"> <!-- 5 tiles -->
+        <div class="card-container" ng-repeat="tile in row3">
+            <a href="{{tile.title}}" class="card" id="#cardu" style="width: 20rem;">
+                <img class="card-img-top" src="images/286x180-holder.png" height="50%" alt="{{tile.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.title}}</h5>
+                    <p class="card-text">{{tile.content}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 'footer' -->
+    <div class="row" style="height: 8vh;">
+        <div class="col-sm-12"> </div>
+    </div>
+</div>
+</body>
+</html>
