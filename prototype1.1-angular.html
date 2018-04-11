@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kioskApp">
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/extra.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Include Angular and Angular Routes CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-app.js"></script>
+</head>
+<body ng-controller="kioskFrontScreen">
+<div class="container-fluid" >
+    <!-- 'header' -->
+    <div class="row" style="height: 8vh;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="text-align: center;"><h1>Prototype Interactive BrochureKiosk</h1></div>
+    </div>
+    <div id="row1" class="row justify-content-center" style="height: 28vh;"> <!-- 5 tiles -->
+        <div class="card-container" ng-repeat="tile in row1">
+
+            <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
+                <img class="card-img-top" src="images/286x180-holder.png" height="50%" alt="{{tile.Content.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.Content.title}}</h5>
+                    <p class="card-text">{{tile.Content.desc}}</p>
+                </div>
+            </a>
+            <!-- Modal HTML for each tile-->
+            <div class="modal fade modal-{{tile.ID}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{tile.Content.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{tile.Content.title}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="row2" class="row justify-content-center" style="height: 28vh;"> <!-- 5 tiles -->
+        <div class="card-container" ng-repeat="tile in row2">
+
+            <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
+                <img class="card-img-top" src="images/286x180-holder.png" height="50%" alt="{{tile.Content.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.Content.title}}</h5>
+                    <p class="card-text">{{tile.Content.desc}}</p>
+                </div>
+            </a>
+            <!-- Modal HTML for each tile-->
+            <div class="modal fade modal-{{tile.ID}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{tile.Content.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{tile.Content.title}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="row3" class="row justify-content-center" style="height: 28vh;"> <!-- 5 tiles -->
+        <div class="card-container" ng-repeat="tile in row3">
+
+            <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
+                <img class="card-img-top" src="images/286x180-holder.png" height="50%" alt="{{tile.Content.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.Content.title}}</h5>
+                    <p class="card-text">{{tile.Content.desc}}</p>
+                </div>
+            </a>
+            <!-- Modal HTML for each tile-->
+            <div class="modal fade modal-{{tile.ID}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{tile.Content.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{tile.Content.title}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 'footer' -->
+    <div class="row" style="height: 8vh;">
+        <div class="col-sm-12"> </div>
+    </div>
+</div>
+
+</body>
+</html>

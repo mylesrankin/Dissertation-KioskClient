@@ -31,3 +31,16 @@ a {
 a:hover{
     color: black;
 }
+
+.modal-dialog {
+    width: 1000px;
+    height: 80%;
+    margin: 5vw;
+    padding 10%;
+}
+
+.modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+}
