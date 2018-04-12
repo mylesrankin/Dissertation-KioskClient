@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="kioskApp">
 <head>
-    <title>Bootstrap 101 Template</title>
+    <title>Prototype Kiosk Client 1.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -42,10 +42,69 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>{{tile.Content.title}}</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <!-- start of modal content -->
+                                <div class="container" style="max-width: 100%; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3>
+                                                h3. Lorem ipsum dolor sit amet.
+                                            </h3>
+                                            <div class="row">
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container"
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu felis non nunc rhoncus dapibus. Praesent et odio fermentum, accumsan felis id, commodo erat. Ut dapibus sapien sagittis tempor varius. Quisque ut aliquam tellus, quis porta ligula. Fusce bibendum odio id ante congue, ac bibendum nisi venenatis. Nam vehicula aliquet vulputate. Praesent blandit in magna vel pretium. Ut pharetra semper eros, eu rutrum quam imperdiet a. Vivamus ut tempus nunc. Nunc aliquet faucibus lorem, eget vestibulum augue molestie eu. Sed sit amet massa tristique, pulvinar libero et, laoreet lorem.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu felis non nunc rhoncus dapibus. Praesent et odio fermentum, accumsan felis id, commodo erat. Ut dapibus sapien sagittis tempor varius. Quisque ut aliquam tellus, quis porta ligula. Fusce bibendum odio id ante congue, ac bibendum nisi venenatis. Nam vehicula aliquet vulputate. Praesent blandit in magna vel pretium. Ut pharetra semper eros, eu rutrum quam imperdiet a. Vivamus ut tempus nunc. Nunc aliquet faucibus lorem, eget vestibulum augue molestie eu. Sed sit amet massa tristique, pulvinar libero et, laoreet lorem.</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                      <img src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="text-center">
+                                                        <img src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px;">
+                                                    </div>
+                                                    <div class="paragraph-container-md">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu felis non nunc rhoncus dapibus. Praesent et odio fermentum, accumsan felis id, commodo erat. Ut dapibus sapien sagittis tempor varius. Quisque ut aliquam tellus, quis porta ligula. Fusce bibendum odio id ante congue, ac bibendum nisi venenatis. Nam vehicula aliquet vulputate. Praesent blandit in magna vel pretium. Ut pharetra semper eros, eu rutrum quam imperdiet a. Vivamus ut tempus nunc. Nunc aliquet faucibus lorem, eget vestibulum augue molestie eu. Sed sit amet massa tristique, pulvinar libero et, laoreet lorem.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu felis non nunc rhoncus dapibus. Praesent et odio fermentum, accumsan felis id, commodo erat. Ut dapibus sapien sagittis tempor varius. Quisque ut aliquam tellus, quis porta ligula. Fusce bibendum odio id ante congue, ac bibendum nisi venenatis. Nam vehicula aliquet vulputate. Praesent blandit in magna vel pretium. Ut pharetra semper eros, eu rutrum quam imperdiet a. Vivamus ut tempus nunc. Nunc aliquet faucibus lorem, eget vestibulum augue molestie eu. Sed sit amet massa tristique, pulvinar libero et, laoreet lorem.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container-sm">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu felis non nunc rhoncus dapibus. Praesent et odio fermentum, accumsan felis id, commodo erat. Ut dapibus sapien sagittis tempor varius. Quisque ut aliquam tellus, quis porta ligula. Fusce bibendum odio id ante congue, ac bibendum nisi venenatis. Nam vehicula aliquet vulputate. Praesent blandit in magna vel pretium. Ut pharetra semper eros, eu rutrum quam imperdiet a. Vivamus ut tempus nunc. Nunc aliquet faucibus lorem, eget vestibulum augue molestie eu. Sed sit amet massa tristique, pulvinar libero et, laoreet lorem.</p>
+                                                    </div>
+                                                     <div class="text-center">
+                                                        <img src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 600px; height: 225px; padding: 10px;">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-8">
+                                                            <p>Fancy getting some discount of your next purchase at our store? No problem! Just fill out the form below, and press print to receive your voucher.</p>
+                                                            <form accept-charset="UTF-8" role="form">
+                                                                <fieldset>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" placeholder="Name" name="name" type="text">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" placeholder="Email" name="email" type="text">
+                                                                    </div>
+                                                                <input class="btn btn-lg btn-success btn-block" type="submit" value="Print/Email Voucher">
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                        <div class="col-sm-4"><img src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4"><img src="images/qrcode-static.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                        </div>
+                                                        <div class="col-sm-8 text-center" style="margin-top: auto; margin-bottom: auto;"><h3>Scan the QR to download more information or visit us at www.example.com</h3></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of modal content -->
                             </div>
                         </div>
                     </div>

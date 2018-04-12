@@ -32,8 +32,8 @@ app.controller('kioskFrontScreen', function($scope) {
                 }
             }
             $scope.$apply();
+            console.log($scope.tiles)
         }
     });
-
 
 });

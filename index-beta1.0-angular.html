@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kioskApp">
+<head>
+    <title>Prototype Kiosk Client 1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/extra.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Include Angular and Angular Routes CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-app.js"></script>
+</head>
+<body ng-controller="kioskFrontScreen">
+<div class="container-fluid" >
+    <!-- 'header' -->
+    <div class="row" style="height: 8vh;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="text-align: center;"><h1>Prototype Interactive BrochureKiosk</h1></div>
+    </div>
+    <div id="row1" class="row justify-content-center" style="height: 28vh;"> <!-- 6 tiles -->
+        <div class="card-container" ng-repeat="tile in row1">
+
+            <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem; height: 330px;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
+                <img class="card-img-top" ng-src="{{tile.Content.images.thumbnail}}" height="50%" alt="{{tile.Content.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.Content.title}}</h5>
+                    <p class="card-text">{{tile.Content.desc}}</p>
+                </div>
+            </a>
+            <!-- Modal HTML for each tile-->
+            <div class="modal fade modal-{{tile.ID}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{tile.Content.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- start of modal content -->
+                                <div class="container" style="max-width: 100%; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3>
+                                                {{tile.Content.content_title}}
+                                            </h3>
+                                            <div class="row">
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container-md">
+                                                        <p>{{tile.Content.text_content.paragraph1_md.1}}</p>
+                                                        <p>{{tile.Content.text_content.paragraph1_md.2}}</p>
+                                                </div>
+                                                <div class="text-center">
+                                                    <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:50px;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="text-center">
+                                                    <img ng-src="{{tile.Content.images.image2}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-bottom:10px;">
+                                                </div>
+                                                <div class="paragraph-container-md">
+                                                    <p>{{tile.Content.text_content.paragraph2_md.1}}</p>
+                                                    <p>{{tile.Content.text_content.paragraph2_md.1}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                <div class="paragraph-container-sm">
+                                                    <p>{{tile.Content.text_content.paragraph3_sm}}</p>
+                                                </div>
+                                                <div class="text-center">
+                                                    <img ng-src="{{tile.Content.images.image3}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 325px; margin-bottom: 25px; margin-top: -60px;">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        {{tile.Content.text_content.form_area_text}}
+                                                        <form accept-charset="UTF-8" role="form">
+                                                            <fieldset>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" placeholder="Name" name="name" type="text">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" placeholder="Email" name="email" type="text">
+                                                                </div>
+                                                                <input class="btn btn-lg btn-success btn-block" type="submit" value="{{tile.Content.text_content.data_collection_btn}}">
+                                                            </fieldset>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-sm-4"><img ng-src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4"><img src="images/qrcode-static.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                    </div>
+                                                    <div class="col-sm-8 text-center" style="margin-top: auto; margin-bottom: auto;"><h3>{{tile.Content.text_content.qr_code_text}}</h3></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of modal content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div id="row2" class="row justify-content-center" style="height: 28vh;"> <!-- 6 tiles -->
+        <div class="card-container" ng-repeat="tile in row2">
+
+            <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem; height: 330px;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
+                <img class="card-img-top" ng-src="{{tile.Content.images.thumbnail}}" height="50%" alt="{{tile.Content.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.Content.title}}</h5>
+                    <p class="card-text">{{tile.Content.desc}}</p>
+                </div>
+            </a>
+            <!-- Modal HTML for each tile-->
+            <div class="modal fade modal-{{tile.ID}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{tile.Content.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- start of modal content -->
+                                <div class="container" style="max-width: 100%; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3>
+                                                {{tile.Content.content_title}}
+                                            </h3>
+                                            <div class="row">
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container-md">
+                                                        <p>{{tile.Content.text_content.paragraph1_md.1}}</p>
+                                                        <p>{{tile.Content.text_content.paragraph1_md.2}}</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:50px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="text-center">
+                                                        <img ng-src="{{tile.Content.images.image2}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-bottom:10px;">
+                                                    </div>
+                                                    <div class="paragraph-container-md">
+                                                        <p>{{tile.Content.text_content.paragraph2_md.1}}</p>
+                                                        <p>{{tile.Content.text_content.paragraph2_md.1}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container-sm">
+                                                        <p>{{tile.Content.text_content.paragraph3_sm}}</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <img ng-src="{{tile.Content.images.image3}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 325px; margin-bottom: 25px; margin-top: -60px;">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-8">
+                                                            {{tile.Content.text_content.form_area_text}}
+                                                            <form accept-charset="UTF-8" role="form">
+                                                                <fieldset>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" placeholder="Name" name="name" type="text">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" placeholder="Email" name="email" type="text">
+                                                                    </div>
+                                                                    <input class="btn btn-lg btn-success btn-block" type="submit" value="{{tile.Content.text_content.data_collection_btn}}">
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                        <div class="col-sm-4"><img ng-src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4"><img src="images/qrcode-static.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                        </div>
+                                                        <div class="col-sm-8 text-center" style="margin-top: auto; margin-bottom: auto;"><h3>{{tile.Content.text_content.qr_code_text}}</h3></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of modal content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="row3" class="row justify-content-center" style="height: 28vh;"> <!-- 6 tiles -->
+        <div class="card-container" ng-repeat="tile in row3">
+
+            <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem; height: 330px;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
+                <img class="card-img-top" ng-src="{{tile.Content.images.thumbnail}}" height="50%" alt="{{tile.Content.title}}">
+                <div class="card-body" height="50%">
+                    <h5 class="card-title">{{tile.Content.title}}</h5>
+                    <p class="card-text">{{tile.Content.desc}}</p>
+                </div>
+            </a>
+            <!-- Modal HTML for each tile-->
+            <div class="modal fade modal-{{tile.ID}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{tile.Content.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- start of modal content -->
+                                <div class="container" style="max-width: 100%; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3>
+                                                {{tile.Content.content_title}}
+                                            </h3>
+                                            <div class="row">
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container-md">
+                                                        <p>{{tile.Content.text_content.paragraph1_md.1}}</p>
+                                                        <p>{{tile.Content.text_content.paragraph1_md.2}}</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:50px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="text-center">
+                                                        <img ng-src="{{tile.Content.images.image2}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-bottom:10px;">
+                                                    </div>
+                                                    <div class="paragraph-container-md">
+                                                        <p>{{tile.Content.text_content.paragraph2_md.1}}</p>
+                                                        <p>{{tile.Content.text_content.paragraph2_md.1}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4" style="background-color:#fdfdfe;">
+                                                    <div class="paragraph-container-sm">
+                                                        <p>{{tile.Content.text_content.paragraph3_sm}}</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <img ng-src="{{tile.Content.images.image3}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 325px; margin-bottom: 25px; margin-top: -60px;">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-8">
+                                                            {{tile.Content.text_content.form_area_text}}
+                                                            <form accept-charset="UTF-8" role="form">
+                                                                <fieldset>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" placeholder="Name" name="name" type="text">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" placeholder="Email" name="email" type="text">
+                                                                    </div>
+                                                                    <input class="btn btn-lg btn-success btn-block" type="submit" value="{{tile.Content.text_content.data_collection_btn}}">
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                        <div class="col-sm-4"><img ng-src="images/placholder-500x550.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4"><img src="images/qrcode-static.png" class="text-center" alt="Responsive image" style="width: 200px; height: 200px; padding: 10px;">
+                                                        </div>
+                                                        <div class="col-sm-8 text-center" style="margin-top: auto; margin-bottom: auto;"><h3>{{tile.Content.text_content.qr_code_text}}</h3></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of modal content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- 'footer' -->
+<div class="row" style="height: 8vh;">
+    <div class="col-sm-12"> </div>
+</div>
+</div>
+
+</body>
+</html>
