@@ -21,6 +21,7 @@
         <div class="col-sm-6" style="text-align: center;"><h1>Prototype Interactive BrochureKiosk</h1></div>
     </div>
     <div id="row1" class="row justify-content-center" style="height: 28vh;"> <!-- 6 tiles -->
+        <div id="loading" class="loader" style="margin-top: 40vh; display: none;"></div>
         <div class="card-container" ng-repeat="tile in row1">
 
             <a type="button" class="card modal-click" data-modal="modal-{{tile.ID}}" id="#cardu" style="width: 20rem; height: 330px;" data-toggle="modal" data-target=".modal-{{tile.ID}}">
