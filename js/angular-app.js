@@ -1,7 +1,20 @@
 var app = angular.module('kioskApp', []);
 
 
-app.controller('kioskFrontScreen', function($scope) {
+app.controller('kioskFrontScreen', function($scope, $timeout, $interval) {
+    localStorage.hardwareid = 'test'
+    $interval(function(){
+        $.ajax({
+            url: "http://localhost:3000/screen/heartbeat",
+            type: "POST",
+            beforeSend: function (request) {
+                request.setRequestHeader("hardwareid", "test");
+            },
+            success: function(){
+                console.log('Heartbeat sent.')
+            }
+        })
+    }, 5000)
     $scope.tiles = []
     // Rows
     $scope.row1 = []
@@ -15,6 +28,7 @@ app.controller('kioskFrontScreen', function($scope) {
         url: "http://localhost:3000/screen/adverts",
         success: function(data){
             $scope.tiles = data
+            console.log('test')
             for (var i = 0; i < $scope.tiles.length; i++){
                 $scope.tiles[i].Content = JSON.parse($scope.tiles[i].Content)
                 if($scope.tiles[i] !== null) {
