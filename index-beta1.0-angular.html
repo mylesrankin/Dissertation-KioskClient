@@ -20,7 +20,36 @@
     <!-- 'header' -->
     <div class="row" style="height: 8vh;">
         <div class="col-sm-3"></div>
-        <div class="col-sm-6" style="text-align: center;"><h1>Prototype Interactive BrochureKiosk</h1></div>
+        <div class="col-sm-6" style="text-align: center;"><h1>Prototype Version KioskClient v0.1.0</h1></div>
+    </div>
+    <div id="unauth" class="row justify-content-center" style="display: none; height: 28vh; padding-top: 20vh; text-align: center;">
+        <div class="col-md-5">
+                <form role="form">
+                    <h3 style="padding:25px;">It seems like this screen is not registered! Please enter a 9-digit Screen Token below to authorise this device.</h3>
+                    <p><i>You can generate a Screen Token by logging into your KioskPortal and then going to 'Add New Screen'</i></p>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="tokenp1" id="token-p1" class="form-control input-sm" placeholder="XXX" maxlength="3">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="token-p2" id="token-p2" class="form-control input-sm" placeholder="YYY" maxlength="3">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="token-p3" id="token-p3" class="form-control input-sm" placeholder="ZZZ" maxlength="3">
+                            </div>
+                        </div>
+                        <input id="auth-btn" type="submit" value="Authorise Screen" class="btn btn-info btn-block">
+                    </div>
+
+
+                </form>
+        </div>
     </div>
     <div id="row1" class="row justify-content-center" style="height: 28vh;"> <!-- 6 tiles -->
         <div id="loading" class="loader" style="margin-top: 40vh; display: none;"></div>
