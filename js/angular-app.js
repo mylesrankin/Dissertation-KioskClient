@@ -3,7 +3,9 @@ var app = angular.module('kioskApp', []);
 
 app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) {
     new Fingerprint2().get(function (result) {
-        localStorage.hardwareid = result
+        localStorage.hardwareid= result
+        $scope.HID = result
+
         $http({
             url: "http://127.0.0.1:3000/screen/check-hid",
             method: "POST",

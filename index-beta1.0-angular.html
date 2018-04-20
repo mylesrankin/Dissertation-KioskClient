@@ -14,13 +14,15 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script src="js/angular-app.js"></script>
+    <script src="js/qrcode.min.js"></script>
 </head>
 <body ng-controller="kioskFrontScreen">
 <div class="container-fluid" >
     <!-- 'header' -->
     <div class="row" style="height: 8vh;">
         <div class="col-sm-3"></div>
-        <div class="col-sm-6" style="text-align: center;"><h1>Prototype Version KioskClient v0.1.0</h1></div>
+        <div class="col-sm-6" style="text-align: center;"><h1>Prototype KioskClient <small>v0.1.0</small></h1></div>
+        <p>[Debug Mode] HID: {{HID}}</p>
     </div>
     <div id="unauth" class="row justify-content-center" style="display: none; height: 28vh; padding-top: 20vh; text-align: center;">
         <div class="col-md-5">
@@ -88,7 +90,7 @@
                                                         <p>{{tile.Content.text_content.paragraph1_md.2}}</p>
                                                 </div>
                                                 <div class="text-center">
-                                                    <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:60px;">
+                                                    <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:85px;">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -181,7 +183,7 @@
                                                         <p>{{tile.Content.text_content.paragraph1_md.2}}</p>
                                                     </div>
                                                     <div class="text-center">
-                                                        <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:60px;">
+                                                        <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:85px;">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -275,7 +277,7 @@
                                                         <p>{{tile.Content.text_content.paragraph1_md.2}}</p>
                                                     </div>
                                                     <div class="text-center">
-                                                        <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:60px;">
+                                                        <img ng-src="{{tile.Content.images.image1}}" class="img-thumbnail text-center" alt="Responsive image" style="width: 600px; height: 450px; padding: 10px; margin-top:85px;">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
