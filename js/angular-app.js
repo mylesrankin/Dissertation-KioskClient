@@ -59,6 +59,18 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
                     }
                 })
 
+                $scope.generateQR = function(tileID, URL){
+                    console.log(URL)
+                    var id = "qr-code-" + tileID
+                    $(document).ready(function(){
+                        new QRCode(id, {
+                            text: URL,
+                            width: 200,
+                            height: 200
+                        })
+                    })
+
+                }
                 $scope.submitResponse = function (advertID, previousBtn) {
                     console.log(advertID)
                     console.log(document.getElementById("advert-" + advertID + "-form-name").value)
