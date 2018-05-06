@@ -74,30 +74,37 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
                 $scope.submitResponse = function (advertID, previousBtn) {
                     console.log(advertID)
                     console.log(document.getElementById("advert-" + advertID + "-form-name").value)
-                    $http({
-                        url: "http://127.0.0.1:3000/response",
-                        method: "POST",
-                        headers: {"hardwareid": localStorage.hardwareid},
-                        data: {
-                            "Name": document.getElementById("advert-" + advertID + "-form-name").value,
-                            "Email": document.getElementById("advert-" + advertID + "-form-email").value,
-                            "OriginAdvertID": advertID
-                        }
-                    }).then(function successCallback(res) {
-                        document.getElementById("advert-" + advertID + "-btn").innerHTML = "Response recorded, thank you."
-                        document.getElementById("advert-" + advertID + "-form-name").disabled = "true"
-                        document.getElementById("advert-" + advertID + "-form-email").disabled = "true"
-                        document.getElementById("advert-" + advertID + "-btn").className = "btn btn-lg btn-danger btn-block"
+                    if(document.getElementById("advert-" + advertID + "-form-name").value && document.getElementById("advert-" + advertID + "-form-email").value) {
+                        console.log('True')
+                        $http({
+                            url: "http://127.0.0.1:3000/response",
+                            method: "POST",
+                            headers: {"hardwareid": localStorage.hardwareid},
+                            data: {
+                                "Name": document.getElementById("advert-" + advertID + "-form-name").value,
+                                "Email": document.getElementById("advert-" + advertID + "-form-email").value,
+                                "OriginAdvertID": advertID
+                            }
+                        }).then(function successCallback(res) {
+                            document.getElementById("advert-" + advertID + "-btn").innerHTML = "Response recorded, thank you."
+                            document.getElementById("advert-" + advertID + "-form-name").disabled = "true"
+                            document.getElementById("advert-" + advertID + "-form-email").disabled = "true"
+                            document.getElementById("advert-" + advertID + "-btn").className = "btn btn-lg btn-danger btn-block"
 
-                        $timeout(function () {
-                            document.getElementById("advert-" + advertID + "-btn").innerHTML = previousBtn
-                            document.getElementById("advert-" + advertID + "-form-name").disabled = ""
-                            document.getElementById("advert-" + advertID + "-form-email").disabled = ""
-                            document.getElementById("advert-" + advertID + "-btn").className = "btn btn-lg btn-success btn-block"
-                        }, 5000)
-                    }, function errorCallback(res) {
-                        console.log(res)
-                    })
+                            $timeout(function () {
+                                document.getElementById("advert-" + advertID + "-btn").innerHTML = previousBtn
+                                document.getElementById("advert-" + advertID + "-form-name").disabled = ""
+                                document.getElementById("advert-" + advertID + "-form-email").disabled = ""
+                                document.getElementById("advert-" + advertID + "-form-name").value = ""
+                                document.getElementById("advert-" + advertID + "-form-email").value = ""
+                                document.getElementById("advert-" + advertID + "-btn").className = "btn btn-lg btn-success btn-block"
+                            }, 5000)
+                        }, function errorCallback(res) {
+                            console.log(res)
+                        })
+                    }else{
+                        alert('Error! One or more fields are missing in the response form.')
+                    }
                 }
 
                 $scope.incrementImpression = function (advertID) {
