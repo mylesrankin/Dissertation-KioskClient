@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5411822b-399d-4044-9455-3c29818c53f0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Test/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Test/index.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index-angulartest.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index-beta1.0-angular.html" afterPath="$PROJECT_DIR$/index-beta1.0-angular.html" />
-      <change beforePath="$PROJECT_DIR$/index-bootstrap2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index-bootstrap3.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index-netflixstyle.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/js/angular-app.js" afterPath="$PROJECT_DIR$/js/angular-app.js" />
-      <change beforePath="$PROJECT_DIR$/prototype-temp.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/prototype1-angular.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/prototype1.1-angular.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sudocode_populatetiles.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/js/angular-appold.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/js/angular-appold2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/js/carousel.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/js/junk.js" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,8 +36,8 @@
           <file leaf-file-name="index-beta1.0-angular.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index-beta1.0-angular.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="33" />
+                <state relative-caret-position="-85">
+                  <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#img#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -86,26 +79,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="680">
                   <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="angular-appold.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/angular-appold.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="angular-appold2.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/angular-appold2.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -188,10 +161,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
+    <option name="y" value="196" />
     <option name="width" value="2574" />
-    <option name="height" value="1407" />
+    <option name="height" value="1211" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -224,11 +198,6 @@
               <item name="Dissertation-KioskClient" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dissertation-KioskClient" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dissertation-KioskClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dissertation-KioskClient" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,15 +278,15 @@
       <workItem from="1523287573164" duration="10225000" />
       <workItem from="1523476064074" duration="35859000" />
       <workItem from="1523821424609" duration="19256000" />
-      <workItem from="1524231594782" duration="15640000" />
+      <workItem from="1524231594782" duration="18756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113155000" />
+    <option name="totallyTimeSpent" value="116271000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="2574" height="1407" extended-state="1" />
+    <frame x="-7" y="196" width="2574" height="1211" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17626183" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -327,7 +296,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954017" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.350118" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41395348" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5663717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -698,8 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index-beta1.0-angular.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="-85">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
