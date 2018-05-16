@@ -1,21 +1,22 @@
 var app = angular.module('kioskApp', []);
 
-
+/** Main Controller for Kiosk Client**/
 app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) {
-    new Fingerprint2().get(function (result) {
-        localStorage.hardwareid= result
+    new Fingerprint2().get(function (result) { // Generate hardware id for authentication
+        localStorage.hardwareid= result // Put Hardwareid in localStorage for http requests
         $scope.HID = result
 
-        $http({
+        $http({ // Check if screen has been authenticated
             url: "http://127.0.0.1:3000/screen/check-hid",
             method: "POST",
             headers: {"hardwareid": localStorage.hardwareid},
         }).then(function successCallback(res) {
+            // Authorised - Get screen content, etc
             document.getElementById('unauth').remove()
             console.log(res)
             if (res.data.status == true) {
                 $interval(function () {
-                    $.ajax({
+                    $.ajax({ // Send a heartbeat to API server every 5 seconds
                         url: "http://localhost:3000/screen/heartbeat",
                         type: "POST",
                         beforeSend: function (request) {
@@ -38,7 +39,9 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
                     },
                     url: "http://localhost:3000/screen/adverts",
                     success: function (data) {
+                        // Populate tile data
                         $scope.tiles = data
+                        // Populate row data
                         for (var i = 0; i < $scope.tiles.length; i++) {
                             $scope.tiles[i].Content = JSON.parse($scope.tiles[i].Content)
                             if ($scope.tiles[i] !== null) {
@@ -59,6 +62,7 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
                     }
                 })
 
+                // Generates QR codes for each advert
                 $scope.generateQR = function(tileID, URL){
                     console.log(URL)
                     var id = "qr-code-" + tileID
@@ -71,6 +75,7 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
                     })
 
                 }
+                // Response function for user form submissions
                 $scope.submitResponse = function (advertID, previousBtn) {
                     console.log(advertID)
                     console.log(document.getElementById("advert-" + advertID + "-form-name").value)
@@ -107,6 +112,7 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
                     }
                 }
 
+                // Function for incrementing advert impressions
                 $scope.incrementImpression = function (advertID) {
                     console.log("Incrementing " + advertID)
                     $http({
@@ -121,14 +127,16 @@ app.controller('kioskFrontScreen', function($scope, $timeout, $interval, $http) 
 
             }
         }, function errorCallback(){
+            // Display screen 'not authed' dialog with screen token input
             console.log("Oh no, this screen isn't registered!")
             document.getElementById('unauth').style.display = "";
-            document.getElementById('auth-btn').addEventListener('click', function(){
+            document.getElementById('auth-btn').addEventListener('click', function(){ // Wait for auth button event
+                // validation
                 if((document.getElementById('token-p1').value.length)+(document.getElementById('token-p2').value.length)+(document.getElementById('token-p3').value.length)<9){
                     alert("Error: Please fill out the token boxes fully! (3 characters each box, 9 total)")
                 }else {
                     var token = (document.getElementById('token-p1').value)+ "-" +(document.getElementById('token-p2').value)+ "-" +(document.getElementById('token-p3').value)
-                    $http({
+                    $http({ // attempt to authenticate screen
                         url: "http://127.0.0.1:3000/screens/"+token,
                         method: "POST",
                         headers: {"hardwareid": localStorage.hardwareid}
